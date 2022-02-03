@@ -1,0 +1,3 @@
+#!/bin/sh -e
+
+cat $INIT_HOSTNAME > $INIT_HOSTNAME_PROC

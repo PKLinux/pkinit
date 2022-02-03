@@ -1,0 +1,7 @@
+#!/bin/sh
+
+. /etc/init/init.lib
+
+job ./filesystems
+job ./entropy
+job ./hostname

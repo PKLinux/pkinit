@@ -1,0 +1,16 @@
+#!/bin/sh
+
+export INIT_HOSTNAME="/etc/hostname"
+export INIT_HOSTNAME_PROC="/proc/sys/kernel/hostname"
+
+export INIT_ENTROPY_VAULT="/var/entropy"
+export INIT_ENTROPY_KERNEL="/dev/random"
+
+[ -f "/etc/init/init.conf" ] && . /etc/init/init.conf
+
+job() {
+	printf "init: job $(basename $1) "
+	$@ >/dev/null 2>&1 && printf "OK!\n" || printf "FAILED!\n"
+}
+
+cd $(dirname $0)

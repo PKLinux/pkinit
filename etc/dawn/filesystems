@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+mount -t procfs /proc
+mount -t sysfs /sys
+mount -t tmpfs /run -o mode=0775
+mount -t devtmpfs /dev -o mode=0775
+
+mount -a

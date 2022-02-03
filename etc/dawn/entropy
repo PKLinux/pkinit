@@ -1,0 +1,3 @@
+#!/bin/sh -e
+
+dd if=$INIT_ENTROPY_VAULT of=$INIT_ENTROPY_KERNEL bs=2048 count=1
